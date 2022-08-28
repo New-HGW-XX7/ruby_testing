@@ -1,3 +1,4 @@
+# Read
 # frozen_string_literal: true
 
 # Do not use 'be_truthy' or 'be_falsy' for methods that should only be
