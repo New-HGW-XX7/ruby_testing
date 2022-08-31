@@ -70,34 +70,60 @@ describe MagicSeven do
   # Write a test for each of the following methods:
 
   describe '#subtract_four' do
+    context 'when the previous step is 14' do
+      it 'returns 10' do
+        previous_step = 14
+        result = game.subtract_four(previous_step)
+        expect(result).to eq(10)
+      end
+    end
   end
 
   describe '#divide_by_two' do
+    context 'when the previous step is 10' do
+      it 'returns 5' do
+        previous_step = 10
+        result = game.divide_by_two(previous_step)
+        expect(result).to eq(5)
+      end
+    end
   end
 
   # The following tests will need you to create new instances of MagicSeven with
   # a specific value for the random_number.
   describe '#subtract_random_number' do
+    subject(:game_2) { described_class.new(10) }
+    it 'subtracts from previous number' do
+      previous_number = 10
+      result = game_2.subtract_random_number(previous_number)
+      expect(result).to eq(0)
+    end
   end
 
   # The #play method will always return seven! Test this game, using any
   # integer as the random_number. Update the context with the number.
   describe '#play' do
-    context 'when the random number is ...' do
+    context 'when the random number is 20' do
+      subject(:game_3) { described_class.new(20) }
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        expect(game_3.play).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 30' do
+      subject(:game_4) { described_class.new(30) }
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        expect(game_4.play).to eq(7)
       end
     end
 
-    context 'when the random number is ...' do
+    context 'when the random number is 40' do
+      subject(:game_5) { described_class.new(40) }
       # remove the 'x' before running this test
-      xit 'will return 7' do
+      it 'will return 7' do
+        expect(game_5.play).to eq(7)
       end
     end
   end
