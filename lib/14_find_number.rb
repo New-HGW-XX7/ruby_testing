@@ -11,4 +11,17 @@ class FindNumber
     @answer = answer.value
     @guess = guess
   end
+
+  def make_guess(min = @min, max = @max)
+    (min + max) / 2
+  end
+
+  def game_over?(guess = @guess, answer = @answer)
+    guess == answer ? true : false
+  end
+
+  def update_range
+    @min = @guess + 1 if @guess < @answer
+    @max = @guess - 1 if @guess > @answer
+  end
 end
